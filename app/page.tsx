@@ -85,8 +85,8 @@ export default function Home() {
       {showNotification && (
         <div className="bg-forest text-white py-2 px-4 text-center text-sm relative">
           <div className="flex items-center justify-center gap-2">
-            <Gift className="h-4 w-4" />
-            <span>🎉 Promo Spesial: Diskon 25% untuk booking bulan ini! Gunakan kode: ISLAMI25</span>
+            <Gift className="h-6 w-6" />
+            <span>Promo Spesial: Diskon 25% untuk booking bulan ini! Gunakan kode: ISLAMI25</span>
           </div>
           <button
             onClick={() => setShowNotification(false)}
@@ -102,14 +102,14 @@ export default function Home() {
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-3">
             <Image
-              src="https://cdn6.f-cdn.com/contestentries/2280428/70167456/64b3909a27493_thumb900.jpg"
+              src="/image/logo.jpg"
               alt="City Islami Logo"
               width={40}
               height={40}
-              className="h-10 w-10 rounded-full"
+              className="h-15 w-11 rounded-full"
             />
             <div>
-              <span className="text-xl font-bold text-forest">City Islami</span>
+              <span className="text-xl font-bold text-forest">City Islami Homestay</span>
               <div className="flex items-center gap-1 text-xs text-gray-500">
                 <Star className="h-3 w-3 fill-terracotta text-terracotta" />
                 <span>4.9 Rating</span>
@@ -135,9 +135,11 @@ export default function Home() {
               <Shield className="h-3 w-3 mr-1" />
               Halal Certified
             </Badge>
+            <Link href="#kamar">
             <AnimatedButton className="bg-forest hover:bg-forest-dark text-white px-6 py-2 rounded-lg">
-              Book Now
+            Book Now
             </AnimatedButton>
+            </Link>
           </div>
         </div>
       </header>
@@ -512,7 +514,7 @@ export default function Home() {
         </section>
 
         {/* Pricing Plans */}
-        <section className="py-20 bg-white">
+        <section id="kamar"className="py-20 bg-white">
           <div className="container px-4 md:px-6">
             <FadeUpSection className="text-center mb-16">
               <Badge className="mb-4 bg-forest/10 text-forest border border-forest/20">Room Packages</Badge>
@@ -1270,12 +1272,16 @@ export default function Home() {
       </footer>
 
       {/* Sticky CTA Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <AnimatedButton className="bg-forest hover:bg-forest-dark text-white px-6 py-4 rounded-lg shadow-2xl">
-          <Calendar className="mr-2 h-5 w-5" />
-          Book Now
-        </AnimatedButton>
-      </div>
+      import Link from "next/link";
+
+<div className="fixed bottom-6 right-6 z-50">
+  <Link href="#kamar">
+    <AnimatedButton className="bg-forest hover:bg-forest-dark text-white px-6 py-4 rounded-lg shadow-2xl">
+      <Calendar className="mr-2 h-5 w-5" />
+      Book Now
+    </AnimatedButton>
+  </Link>
+</div>
 
       {/* Exit Intent Popup */}
       {showExitIntent && (

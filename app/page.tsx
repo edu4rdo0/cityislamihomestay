@@ -83,14 +83,14 @@ export default function Home() {
     <div className="flex min-h-screen flex-col relative">
       {/* Notification Bar */}
       {showNotification && (
-        <div className="bg-forest text-white py-2 px-4 text-center text-sm relative">
+        <div className="bg-foreground text-white py-2 px-4 text-center text-sm relative">
           <div className="flex items-center justify-center gap-2">
             <Gift className="h-6 w-6" />
             <span>Promo Spesial: Diskon 25% untuk booking bulan ini! Gunakan kode: ISLAMI25</span>
           </div>
           <button
             onClick={() => setShowNotification(false)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 hover:bg-white/20 rounded-full p-1"
+            className="absolute right-4 top-1/2 -translate-y-1/2 hover:bg-white rounded-full p-1"
           >
             <X className="h-4 w-4" />
           </button>
@@ -98,51 +98,52 @@ export default function Home() {
       )}
 
       {/* Sticky Header with Glassmorphism */}
-      <header className="sticky top-0 z-50 border-b border-sage/30 bg-beige/95 backdrop-blur-xl shadow-sm">
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/image/logo.jpg"
-              alt="City Islami Logo"
-              width={40}
-              height={40}
-              className="h-15 w-11 rounded-full"
-            />
-            <div>
-              <span className="text-xl font-bold text-forest">City Islami Homestay</span>
-              <div className="flex items-center gap-1 text-xs text-gray-500">
-                <Star className="h-3 w-3 fill-terracotta text-terracotta" />
-                <span>4.9 Rating</span>
-              </div>
-            </div>
-          </div>
-
-          <nav className="hidden md:flex gap-8">
-            {["Beranda", "Tentang", "Kamar", "Fasilitas", "Testimoni", "Kontak"].map((item, index) => (
-              <Link
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-sm font-medium text-charcoal hover:text-forest transition-colors duration-300 relative group"
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-forest group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <Badge variant="outline" className="hidden sm:flex border-[#0F9D58] text-[#0F9D58]">
-              <Shield className="h-3 w-3 mr-1" />
-              Halal Certified
-            </Badge>
-            <Link href="#kamar">
-            <AnimatedButton className="bg-forest hover:bg-forest-dark text-white px-6 py-2 rounded-lg">
-            Book Now
-            </AnimatedButton>
-            </Link>
-          </div>
+      <header className="sticky top-0 z-50 border-foreground border-sage/30 bg-background backdrop-blur-xl shadow-sm">
+  <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+    <div className="flex items-center gap-3">
+      <Image
+        src="/image/logo.jpg"
+        alt="City Islami Logo"
+        width={40}
+        height={40}
+        className="h-15 w-11 rounded-full"
+      />
+      <div>
+        <span className="text-xl font-bold text-white">City Islami Homestay</span>
+        <div className="flex items-center gap-1 text-xs text-white">
+          <Star className="h-3 w-3 fill-terracotta text-white" />
+          <span>4.9 Rating</span>
         </div>
-      </header>
+      </div>
+    </div>
+
+    <nav className="hidden md:flex gap-8">
+      {["Beranda", "Tentang", "Kamar", "Fasilitas", "Testimoni", "Kontak"].map((item) => (
+        <Link
+          key={item}
+          href={`#${item.toLowerCase()}`}
+          className="text-sm font-medium text-white hover:text-forest transition-colors duration-300 relative group"
+        >
+          {item}
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-foreground group-hover:w-full transition-all duration-300"></span>
+        </Link>
+      ))}
+    </nav>
+
+    <div className="flex items-center gap-4">
+      <Badge variant="outline" className="hidden sm:flex border-[#0F9D58] text-[#0F9D58]">
+        <Shield className="h-3 w-3 mr-1" />
+        Halal Certified
+      </Badge>
+
+      <Link
+        href="/login"
+        className="px-4 py-2 text-sm font-medium text-white bg-foreground rounded hover:bg-background transition">
+        Login
+      </Link>
+    </div>
+  </div>
+</header>
 
       <main className="flex-1">
         {/* Enhanced Hero Section */}
@@ -220,11 +221,11 @@ export default function Home() {
   {/* CTA */}
   <FadeUpSection delay={0.4}>
     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 sm:mb-12">
-      <AnimatedButton className="bg-terracotta hover:bg-terracotta-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium flex items-center justify-center">
+      <AnimatedButton className="bg-background hover:bg-background text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium flex items-center justify-center">
         <Calendar className="mr-2 h-5 w-5" />
         Book Your Stay Now
       </AnimatedButton>
-      <AnimatedButton className="border border-beige/70 text-white hover:bg-beige/10 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium flex items-center justify-center">
+      <AnimatedButton className="bg-background border-beige/70 text-white hover:bg-background hover:text-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium flex items-center justify-center">
         <Play className="mr-2 h-5 w-5" />
         Watch Virtual Tour
       </AnimatedButton>
@@ -262,10 +263,6 @@ export default function Home() {
   </FadeUpSection>
 </div>
             </div>
-            
-
-
-
 
           {/* Scroll Indicator */}
           <FloatingElement className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white">
@@ -1272,8 +1269,6 @@ export default function Home() {
       </footer>
 
       {/* Sticky CTA Button */}
-      import Link from "next/link";
-
 <div className="fixed bottom-6 right-6 z-50">
   <Link href="#kamar">
     <AnimatedButton className="bg-forest hover:bg-forest-dark text-white px-6 py-4 rounded-lg shadow-2xl">

@@ -34,11 +34,19 @@ export default function RootLayout({
             gtag('config', 'G-7W320B1E2T');
           `}
         </Script>
+
+        {/* ✅ Midtrans Snap */}
+        <Script
+  src="https://app.sandbox.midtrans.com/snap/snap.js"
+  data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY}
+  strategy="beforeInteractive"
+/>
+
       </head>
-      <body className={inter.className}>
+      <body className={(inter.className, "bg-background text-foreground")}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme=""
           enableSystem
           disableTransitionOnChange
         >

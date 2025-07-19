@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 @layer utilities {
@@ -14,81 +14,123 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+    --background: 28 45% 55%;                /* Warm beige background */
+    --foreground: 28 45% 65%;              /* Dark warm brown text */
+
+    --card: 0 0% 98%;                       /* Off-white cards */
+    --card-foreground: 25 15% 25%;          /* Dark warm brown text on cards */
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 25 15% 25%;
+
+    --primary: 28 45% 55%;                  /* Warm terracotta/brown primary */
+    --primary-foreground: 0 0% 100%;        /* White text on primary */
+
+    --secondary: 35 20% 88%;                /* Light warm beige secondary */
+    --secondary-foreground: 25 15% 25%;     /* Dark text on secondary */
+
+    --muted: 35 15% 90%;                    /* Very light warm muted */
+    --muted-foreground: 25 10% 45%;         /* Medium warm gray text */
+
+    --accent: 25 35% 45%;                   /* Darker warm brown accent */
+    --accent-foreground: 0 0% 98%;          /* Light text on accent */
+
+    --destructive: 0 75% 55%;               /* Soft red */
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+
+    --border: 35 15% 85%;                   /* Light warm border */
+    --input: 0 0% 100%;                     /* White input */
+    --ring: 28 45% 55%;                     /* Warm brown focus ring */
+
+    /* Chart Colors - Warm Tones */
+    --chart-1: 28 45% 55%;  /* Background */
+    --chart-2: 25 35% 45%;  /* Button dkk */
+    --chart-3: 35 25% 75%;  /* Text Terang */
+    --chart-4: 20 25% 65%;  /* Medium warm gray */
+    --chart-5: 35 15% 85%;  /* Very light beige */
+    --chart-6: 25 15% 25%;  /* Text Gelap */
+
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+
+    /* Sidebar */
+    --sidebar-background: 35 20% 88%;       /* Light warm beige sidebar */
+    --sidebar-foreground: 25 15% 25%;       /* Dark warm text */
+    --sidebar-primary: 28 45% 55%;          /* Terracotta primary */
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 35 15% 85%;           /* Light warm accent */
+    --sidebar-accent-foreground: 25 15% 25%;
+    --sidebar-border: 35 15% 82%;
+    --sidebar-ring: 28 45% 55%;
   }
+
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 25 20% 12%;               /* Dark warm brown background */
+    --foreground: 35 15% 90%;               /* Light warm text */
+
+    --card: 25 18% 16%;                     /* Dark warm card */
+    --card-foreground: 35 15% 90%;
+
+    --popover: 25 18% 16%;
+    --popover-foreground: 35 15% 90%;
+
+    --primary: 28 45% 65%;                  /* Lighter terracotta for dark mode */
+    --primary-foreground: 25 20% 12%;       /* Dark text on light primary */
+
+    --secondary: 25 15% 20%;                /* Dark warm secondary */
+    --secondary-foreground: 35 15% 90%;
+
+    --muted: 25 12% 18%;                    /* Dark warm muted */
+    --muted-foreground: 35 10% 65%;
+
+    --accent: 28 45% 65%;                   /* Light warm accent */
+    --accent-foreground: 25 20% 12%;
+
+    --destructive: 0 65% 55%;               /* Red for dark mode */
+    --destructive-foreground: 35 15% 90%;
+
+    --border: 25 12% 22%;                   /* Dark warm border */
+    --input: 25 18% 16%;                    /* Dark warm input */
+    --ring: 28 45% 65%;                     /* Light warm focus ring */
+
+    /* Chart Colors Dark - Warm Tones */
+    --chart-1: 28 45% 65%;  /* Light terracotta */
+    --chart-2: 25 35% 55%;  /* Medium brown */
+    --chart-3: 35 25% 45%;  /* Warm beige */
+    --chart-4: 20 25% 35%;  /* Dark warm gray */
+    --chart-5: 35 15% 25%;  /* Very dark beige */
+    --chart-6: 25 15% 25%;  
+
+    /* Sidebar Dark */
+    --sidebar-background: 25 18% 8%;        /* Very dark warm sidebar */
+    --sidebar-foreground: 35 15% 90%;
+    --sidebar-primary: 28 45% 65%;
+    --sidebar-primary-foreground: 25 20% 12%;
+    --sidebar-accent: 25 12% 18%;
+    --sidebar-accent-foreground: 35 15% 90%;
+    --sidebar-border: 25 12% 22%;
+    --sidebar-ring: 28 45% 65%;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* Smooth transitions untuk semua elemen */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Custom scrollbar untuk estetika yang lebih baik */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
 }
